@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>only-cheng</title>
+  <title>函数~ | only-cheng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="only-cheng">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="自定义函数、匿名函数及递归函数">
+<meta name="keywords" content="总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数~">
+<meta property="og:url" content="http://yoursite.com/2018/07/26/hanshu/index.html">
 <meta property="og:site_name" content="only-cheng">
+<meta property="og:description" content="自定义函数、匿名函数及递归函数">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-25T08:51:56.584Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="only-cheng">
+<meta name="twitter:title" content="函数~">
+<meta name="twitter:description" content="自定义函数、匿名函数及递归函数">
   
     <link rel="alternative" href="/atom.xml" title="only-cheng" type="application/atom+xml">
   
@@ -150,16 +155,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-hanshu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-hanshu" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/26/hanshu/">函数~</a>
+    <h1 class="article-title" itemprop="name">
+      函数~
     </h1>
   
 
@@ -172,12 +175,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="自定义函数、匿名函数及递归函数"><a href="#自定义函数、匿名函数及递归函数" class="headerlink" title="自定义函数、匿名函数及递归函数"></a>自定义函数、匿名函数及递归函数</h3>
-        
-          <a class="article-more-a" href="/2018/07/26/hanshu/#more">more >></a>
-        
+        <h3 id="自定义函数、匿名函数及递归函数"><a href="#自定义函数、匿名函数及递归函数" class="headerlink" title="自定义函数、匿名函数及递归函数"></a>自定义函数、匿名函数及递归函数</h3><a id="more"></a>
+<h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">自定义函数语法格式：</span><br><span class="line">	def  函数名称（[参数1 ,参数2=默认值 ,…]）:</span><br><span class="line">		程序内容叙述(也叫函数体)</span><br><span class="line">		[<span class="built_in">return</span> value]     //<span class="built_in">return</span>语句将终止函数的执行</span><br><span class="line">必需参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。</span><br><span class="line">函数参数的使用如果不使用指定顺序，必须指定关键字赋值。</span><br><span class="line">如果没有传递参数，则会使用默认参数。</span><br><span class="line">你可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数。</span><br><span class="line">	声明函数时，参数中星号 * 可以单独出现，例如:</span><br><span class="line">	def f(a,b,*,c):</span><br><span class="line">		<span class="built_in">return</span> a+b+c</span><br><span class="line">如果单独出现星号 * 后的参数必须用关键字传入。</span><br><span class="line">	f(1,2,3)   <span class="comment"># 报错</span></span><br><span class="line">	f(1,2,c=3) <span class="comment"># 正常</span></span><br><span class="line">加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数</span><br><span class="line">	def printinfo( arg1, *vartuple ): <span class="comment">#"打印任何传入的参数" </span></span><br><span class="line">		<span class="built_in">print</span> (<span class="string">"输出: "</span>) </span><br><span class="line">		<span class="built_in">print</span> (arg1) </span><br><span class="line">		<span class="built_in">print</span> (vartuple) <span class="comment"># 调用printinfo 函数，可用for循环打印出每个值，‘for var in 					 vartuple: print (var)’</span></span><br><span class="line">	printinfo( 70, 60, 50 )</span><br><span class="line">	输出：            <span class="comment">#输出：</span></span><br><span class="line">	70				  70</span><br><span class="line">	(60, 50)		  60</span><br><span class="line">					  50</span><br><span class="line">加了两个星号 ** 的参数会以字典的形式导入。				  </span><br><span class="line">	def printinfo( arg1, **vardict ): <span class="comment">#"打印任何传入的参数" </span></span><br><span class="line">		<span class="built_in">print</span> (<span class="string">"输出: "</span>) </span><br><span class="line">		<span class="built_in">print</span> (arg1) </span><br><span class="line">		<span class="built_in">print</span> (vardict)</span><br><span class="line">	printinfo(1, a=2,b=3)</span><br><span class="line">	输出:</span><br><span class="line">	1</span><br><span class="line">	&#123;<span class="string">'a'</span>: 2, <span class="string">'b'</span>: 3&#125;</span><br><span class="line">函数可以返回多个值，多个值以元组的方式返回:</span><br><span class="line">def fun(a,b):<span class="comment">#"返回多个值，结果以元组形式表示"</span></span><br><span class="line">    <span class="built_in">return</span> a,b,a+b</span><br><span class="line"><span class="built_in">print</span>(fun(1,2))--&gt;(1, 2, 3)</span><br></pre></td></tr></table></figure>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用 lambda 来创建匿名函数。所谓匿名，意即不再使用 def 语句这样标准的形式定义一个函数。</span><br><span class="line">语法</span><br><span class="line">lambda 函数的语法只包含一个语句，如下：</span><br><span class="line">lambda [arg1 [,arg2,.....argn]]:expression</span><br><span class="line">例：sum = lambda arg1, arg2: arg1 + arg2</span><br><span class="line">	<span class="built_in">print</span>(sum(10,20))<span class="comment">#调用sum求和</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">#map(函数，操作的内容)函数 py的高阶函数 </span></span><br><span class="line">	def pingfang(x):<span class="comment">#自定义函数</span></span><br><span class="line">    	<span class="built_in">return</span> x*x</span><br><span class="line">	<span class="built_in">print</span>(list(map(pingfang,[1,2,3,4,5,6,7,8,9])))</span><br><span class="line">	<span class="comment">#匿名函数</span></span><br><span class="line">	s=map(lambda x:x*x,[1,2,3,4,5,6,7,8,9])</span><br><span class="line">	<span class="built_in">print</span>(list(ss))</span><br><span class="line"></span><br><span class="line">	str1=<span class="string">'this is\nan\tisland'</span><span class="comment">#去掉换行、制表符</span></span><br><span class="line">	change=lambda one1:<span class="string">' '</span>.join(one1.split())</span><br><span class="line">	<span class="built_in">print</span>(change(str1))</span><br><span class="line"></span><br><span class="line">	li=[lambda :x <span class="keyword">for</span> x <span class="keyword">in</span> range(10)]</span><br><span class="line">	<span class="built_in">print</span>(li)   <span class="comment">#列表</span></span><br><span class="line">	<span class="built_in">print</span>(li[0])     <span class="comment"># 函数</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="built_in">type</span>(li))  <span class="comment"># list </span></span><br><span class="line">	<span class="built_in">print</span>(<span class="built_in">type</span>(li[0]))  <span class="comment">#  object</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">	L （Local） 局部作用域</span><br><span class="line">	E （Enclosing） 闭包函数外的函数中</span><br><span class="line">	G （Global） 全局作用域</span><br><span class="line">	B （Built-in） 内建作用域</span><br><span class="line">以 L –&gt; E –&gt; G –&gt;B 的规则查找，即：在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内建中找。</span><br><span class="line">x = int(2.9)  <span class="comment"># 内建作用域</span></span><br><span class="line">g_count = 0  <span class="comment"># 全局作用域</span></span><br><span class="line">def outer():</span><br><span class="line">    o_count = 1  <span class="comment"># 闭包函数外的函数中</span></span><br><span class="line">	def inner():</span><br><span class="line">    	i_count = 2  <span class="comment"># 局部作用域</span></span><br><span class="line">函数内可以访问全局变量，但不能更新(修改)其值！</span><br><span class="line">如果引用了还没更新的值则会报错 :</span><br><span class="line">	a = 10</span><br><span class="line">	def sum (n):</span><br><span class="line">		n += a</span><br><span class="line">		a = 11</span><br><span class="line">		<span class="built_in">print</span> (<span class="string">'a = '</span>, a, end = <span class="string">' , '</span> )</span><br><span class="line">		<span class="built_in">print</span> ( <span class="string">'n = '</span>, n )</span><br><span class="line">	sum(3)</span><br><span class="line">	报错:局部变量a在赋值前被引用</span><br><span class="line"></span><br><span class="line">	name=<span class="string">'最炫民族风'</span></span><br><span class="line">	def one():</span><br><span class="line">    	<span class="built_in">print</span>(name)<span class="comment">#使用全局变量，输出‘最炫民族风’</span></span><br><span class="line">	def two():</span><br><span class="line">    	name=<span class="string">'消愁-毛不易'</span></span><br><span class="line">    	<span class="built_in">return</span> one</span><br><span class="line">	res=two() <span class="comment">#res=one</span></span><br><span class="line">	res()   <span class="comment">#res()=one()...调用one()函数！</span></span><br></pre></td></tr></table></figure>
+<h3 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h3><p>个类似递归的定义如下。<br>    def recursion():<br>        return recursion()<br>在使用递归时，需要注意以下几点：<br>    递归就是在过程或函数里调用自身<br>    必须有一个明确的递归结束条件，称为递归出口。<br>注意： 切勿忘记递归出口，避免函数无限调用。<br>    对一个数字列表（或者其他序列）求和<br>    def mysum(L):<br>        if not L:<br>            return 0<br>        else:<br>            return L[0] + mysum(L[1:])<br>    print(mysum([1,2,3,4,5]))&gt;&gt;&gt;&gt; 15<br>    计算数n的阶乘。<br>    def factorial(n):<br>    if n == 1:<br>        return 1<br>    else:<br>        return n * factorial(n-1)<br>    print(factorial(5))&gt;&gt;&gt;&gt;&gt; 120</p>
+<p><code>`</code></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -197,16 +224,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/26/hanshu/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/26/hanshu/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/21/yuanzu/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">元组简单操作</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -221,699 +307,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-yuanzu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/21/yuanzu/">元组简单操作</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/21/yuanzu/" class="archive-article-date">
-  	<time datetime="2018-07-21T09:38:14.711Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="元组的操作"><a href="#元组的操作" class="headerlink" title="元组的操作"></a>元组的操作</h3>
-        
-          <a class="article-more-a" href="/2018/07/21/yuanzu/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/21/yuanzu/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义函数、匿名函数及递归函数"><span class="toc-number">1.</span> <span class="toc-text">自定义函数、匿名函数及递归函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义函数"><span class="toc-number">2.</span> <span class="toc-text">自定义函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名函数"><span class="toc-number">3.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量作用域"><span class="toc-number">4.</span> <span class="toc-text">变量作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归函数"><span class="toc-number">5.</span> <span class="toc-text">递归函数</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-zifuchen" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/21/zifuchen/">字符串简单操作</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/21/zifuchen/" class="archive-article-date">
-  	<time datetime="2018-07-21T09:33:55.956Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="字符串的定义、转义字符、格式化"><a href="#字符串的定义、转义字符、格式化" class="headerlink" title="字符串的定义、转义字符、格式化"></a>字符串的定义、转义字符、格式化</h3>
-        
-          <a class="article-more-a" href="/2018/07/21/zifuchen/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/21/zifuchen/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-shuxue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/21/shuxue/">数学函数</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/21/shuxue/" class="archive-article-date">
-  	<time datetime="2018-07-21T08:57:10.139Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="字符串模块的引入义"><a href="#字符串模块的引入义" class="headerlink" title="字符串模块的引入义"></a>字符串模块的引入义</h3>
-        
-          <a class="article-more-a" href="/2018/07/21/shuxue/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/21/shuxue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-liebiao" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/21/liebiao/">列表简单操作</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/21/liebiao/" class="archive-article-date">
-  	<time datetime="2018-07-21T08:32:43.852Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="创建列表"><a href="#创建列表" class="headerlink" title="创建列表"></a>创建列表</h3>
-        
-          <a class="article-more-a" href="/2018/07/21/liebiao/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/21/liebiao/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jihe" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/21/jihe/">集合相关操作</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/21/jihe/" class="archive-article-date">
-  	<time datetime="2018-07-21T06:32:47.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2>
-        
-          <a class="article-more-a" href="/2018/07/21/jihe/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/21/jihe/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7.20zongjie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/20/7.20zongjie/">字典相关操作</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/20/7.20zongjie/" class="archive-article-date">
-  	<time datetime="2018-07-20T13:59:10.410Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2>
-        
-          <a class="article-more-a" href="/2018/07/20/7.20zongjie/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/20/7.20zongjie/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-gouwu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/20/gouwu/">模拟网上购物车</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/20/gouwu/" class="archive-article-date">
-  	<time datetime="2018-07-20T13:31:30.690Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="模拟购物车，输入资产买物品。"><a href="#模拟购物车，输入资产买物品。" class="headerlink" title="模拟购物车，输入资产买物品。"></a>模拟购物车，输入资产买物品。</h3>
-        
-          <a class="article-more-a" href="/2018/07/20/gouwu/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/20/gouwu/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-moniHr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/20/moniHr/">模拟公司hr录入员工账号密码的程序</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/20/moniHr/" class="archive-article-date">
-  	<time datetime="2018-07-20T13:31:16.352Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="写程序：模拟公司hr录入员工账号密码的程序。"><a href="#写程序：模拟公司hr录入员工账号密码的程序。" class="headerlink" title="写程序：模拟公司hr录入员工账号密码的程序。"></a>写程序：模拟公司hr录入员工账号密码的程序。</h3>
-        
-          <a class="article-more-a" href="/2018/07/20/moniHr/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/20/moniHr/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-first day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/first day/">网络流行语变成文言文</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/17/first day/" class="archive-article-date">
-  	<time datetime="2018-07-17T07:30:39.261Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1、有钱就是任性投掷千金买一笑，任性乃从骨里傲。</span><br><span class="line">2、能靠长相吃饭却偏偏要靠才华陌上公子颜如玉，偏向红尘费思绪。</span><br><span class="line">3、睡你麻痹起来嗨莫将佳期付酣眠，及时行乐醉人间</span><br><span class="line">4、我的内心几乎是崩溃的吾心已溃，如崩如坠。</span><br><span class="line">5、重要的事情说三遍言一隅，当以三隅反复之</span><br><span class="line">6、挖掘机技术哪家强掘地南山，尘土扬翻。巧技何寻，齐鲁之班。</span><br><span class="line">7、我只想安静地做个美男子江湖喧嚣举目烦，隐遁江湖作美男。劝君莫言江湖事，江湖与我早无关。</span><br><span class="line">8、你们城里人真会玩三里之城，七里之郭。汝家子弟，嬉戏何多。</span><br><span class="line">9、你这么吊，你家里人知道吗阁下嗔痴，家人可知</span><br><span class="line">10、画面太美，我不敢看江山如画，不忍以目而掠其美也。</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随心</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/17/first day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -936,8 +355,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
